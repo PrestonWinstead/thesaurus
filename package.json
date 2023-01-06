@@ -2,7 +2,7 @@
   "name": "thesaurus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://prestonwinstead.github.io/thesaurus",
+  "homepage": "https://prestonwinstead.com/thesaurus",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
