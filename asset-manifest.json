@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/thesaurus/static/css/main.e6c13ad2.css",
+    "main.js": "/thesaurus/static/js/main.99933aed.js",
+    "static/js/787.858cdba3.chunk.js": "/thesaurus/static/js/787.858cdba3.chunk.js",
+    "static/media/logo-transparent.png": "/thesaurus/static/media/logo-transparent.10c30b397c4591098b12.png",
+    "index.html": "/thesaurus/index.html",
+    "main.e6c13ad2.css.map": "/thesaurus/static/css/main.e6c13ad2.css.map",
+    "main.99933aed.js.map": "/thesaurus/static/js/main.99933aed.js.map",
+    "787.858cdba3.chunk.js.map": "/thesaurus/static/js/787.858cdba3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.99933aed.js"
+  ]
+}
