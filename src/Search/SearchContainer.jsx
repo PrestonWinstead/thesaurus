@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Search from './Search';
 
-import OpenAiService from '../Services/OpenAiService';
+import SynonymService from '../Services/SynonymService';
 
 const SearchContainer = () => {
   const searchTypeOptions = ['synonym', 'antonym'];
@@ -12,8 +12,8 @@ const SearchContainer = () => {
 
   const onSubmit = () => {
     setLoading(true);
-    OpenAiService.getSynonym(search, searchType).then(res => {
-      setResults(res.data.choices[0].text);
+    SynonymService.getSynonym(search).then(res => {
+      setResults(res.data[0]);
     }).finally(() => {
       setLoading(false);
     });
