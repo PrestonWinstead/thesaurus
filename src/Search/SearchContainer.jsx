@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Search from './Search';
 
 import SynonymService from '../Services/SynonymService';
+import AntonymService from '../Services/AntonymService';
 
 const SearchContainer = () => {
   const searchTypeOptions = ['synonym', 'antonym'];
@@ -12,7 +13,8 @@ const SearchContainer = () => {
 
   const onSubmit = () => {
     setLoading(true);
-    SynonymService.getSynonym(search).then(res => {
+    const service = searchType === 'synonym' ? SynonymService.getSynonym : AntonymService.getAntonym;
+    service(search).then(res => {
       setResults(res.data[0]);
     }).finally(() => {
       setLoading(false);
