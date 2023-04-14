@@ -19,12 +19,17 @@ const Search = ({
   const classes = {
     container: {
       marginTop: 16,
-      width: '100%',
+      marginRight: '10%',
+      width: '75%',
+      height: '100vh',
       display: 'flex',
       flexDirection: 'column',
       gap: 16,
       boxSizing: 'border-box',
-      padding: 8
+      padding: 8,
+      backgroundColor: '#eeeeee',
+      borderRadius: 12,
+      justifyContent: 'flex-end'
     },
     loadingContainer: {
       display: 'flex',
@@ -49,13 +54,13 @@ const Search = ({
       <TextField
         select
         onChange={handleChange}
-        label="More options for your awesome word"
+        label="I'm looking for..."
       >
         {searchTypeOptions.map(option => (
           <MenuItem key={option} value={option}>{capitalize(option)}</MenuItem>
         ))}
       </TextField>
-      {loading ? <div style={classes.loadingContainer}><CircularProgress /></div> : <Button onClick={onSubmit}>Submit</Button>}
+      {loading ? <div style={classes.loadingContainer}><CircularProgress /></div> : <Button onClick={onSubmit}>Generate List</Button>}
       {results ? results.split('\n').map(option => option ? (
         <p style={{ margin: 0 }}>{option}</p>
       ) : null) : null}

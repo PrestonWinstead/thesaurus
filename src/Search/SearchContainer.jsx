@@ -5,7 +5,7 @@ import SynonymService from '../Services/SynonymService';
 import AntonymService from '../Services/AntonymService';
 
 const SearchContainer = () => {
-  const searchTypeOptions = ['synonym', 'antonym'];
+  const searchTypeOptions = ['synonyms', 'antonyms'];
   const [search, setSearch] = useState('');
   const [searchType, setSearchType] = useState(searchTypeOptions[0])
   const [results, setResults] = useState();
