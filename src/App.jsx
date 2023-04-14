@@ -1,30 +1,24 @@
 import React from 'react';
-import Header from './Header';
+import TitleSection from './TitleSection';
 import Search from './Search';
 
 function App() {
   const classes = {
     body: {
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'row',
       width: '100vw',
+      height: '100vh',
       alignItems: 'center',
-      justifyContent: 'center'
-    },
-    container: {
-      display: 'flex',
-      width: '100%',
-      maxWidth: '900px',
-      flexDirection: 'column'
+      justifyContent: 'center',
+      backgroundColor: 'midnightblue'
     }
   }
 
   return (
     <div style={classes.body}>
-      <div style={classes.container}>
-        <Header />
-        <Search />
-      </div>
+      <TitleSection />
+      <Search />
     </div>
   );
 }
