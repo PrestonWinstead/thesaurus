@@ -13,7 +13,7 @@ const SearchContainer = () => {
 
   const onSubmit = () => {
     setLoading(true);
-    const service = searchType === 'synonym' ? SynonymService.getSynonym : AntonymService.getAntonym;
+    const service = searchType === 'synonyms' ? SynonymService.getSynonym : AntonymService.getAntonym;
     service(search).then(res => {
       setResults(res.data[0]);
     }).finally(() => {
@@ -41,6 +41,7 @@ const SearchContainer = () => {
       setSearchType={setSearchType}
       onSearchKeydown={onSearchKeydown}
       loading={loading}
+      search={search}
     />
   )
 };

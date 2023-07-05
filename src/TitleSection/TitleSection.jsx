@@ -10,7 +10,8 @@ const TitleSection = () => {
       padding: 24,
       color: '#FFFFFF',
       flexDirection: 'column',
-      boxSizing: 'border-box'
+      boxSizing: 'border-box',
+      zIndex: 1
     },
     image: {
       width: '90%',
