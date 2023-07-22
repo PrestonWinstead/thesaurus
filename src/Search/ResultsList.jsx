@@ -41,7 +41,7 @@ const ResultsList = ({ results, searchType, search }) => {
       </div>
       <div style={classes.resultsContainer}>
         {results ? results.split('\n').map(option => option ? (
-          <p style={{ margin: 0 }}>{option}</p>
+          <p key={option} style={{ margin: 0 }}>{option}</p>
         ) : null) : null}
       </div>
     </div>

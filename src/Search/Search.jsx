@@ -76,6 +76,9 @@ const Search = ({
         backgroundColor: 'darkgray',
         color: '#000000'
       }
+    },
+    results: {
+      overflowY: 'scroll'
     }
   }
 
@@ -85,16 +88,18 @@ const Search = ({
 
   return (
     <Container>
-      <div style={classes.prompt}>
-        <div style={classes.avatar}>
-          <img style={classes.image} src={logo} alt="Logo" />
+      <div style={classes.results} id="search-container">
+        <div style={classes.prompt}>
+          <div style={classes.avatar}>
+            <img style={classes.image} src={logo} alt="Logo" />
+          </div>
+          <h4>Welcome to Thesaurus.ai! Enter a search below to generate your first list.</h4>
         </div>
-        <h4>Welcome to Thesaurus.ai! Enter a search below to generate your first list.</h4>
+        {pastResults.map((pastResult, i) => (
+          <ResultsList key={`search-${i}`} results={pastResult} searchType={pastSearchTypes[i]} search={pastSearches[i]} />
+        ))}
+        {results && <ResultsList results={results} searchType={searchType} search={search} />}
       </div>
-      {pastResults.map((pastResult, i) => (
-        <ResultsList results={pastResult} searchType={pastSearchTypes[i]} search={pastSearches[i]} />
-      ))}
-      {results && <ResultsList results={results} searchType={searchType} search={search} />}
       <OutlinedInput
         onChange={setSearch}
         variant="outlined"
@@ -108,6 +113,7 @@ const Search = ({
         onChange={handleChange}
         label="I'm looking for..."
         color="secondary"
+        defaultValue={searchType}
       >
         {searchTypeOptions.map(option => (
           <MenuItem key={option} value={option}>{capitalize(option)}</MenuItem>
