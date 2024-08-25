@@ -23,7 +23,7 @@ const SearchContainer = () => {
     }
     const service = searchType === 'synonyms' ? SynonymService.getSynonym : AntonymService.getAntonym;
     service(search).then(res => {
-      setResults(res.data[0]);
+      setResults(res.data);
       const el = document.getElementById('search-container');
       el.scrollTo({ top: el.scrollHeight });
     }).finally(() => {

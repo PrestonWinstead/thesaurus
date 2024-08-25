@@ -96,7 +96,7 @@ const Search = ({
           <h4>Welcome to Thesaurus.ai! Enter a search below to generate your first list.</h4>
         </div>
         {pastResults.map((pastResult, i) => (
-          <ResultsList key={`search-${i}`} results={pastResult} searchType={pastSearchTypes[i]} search={pastSearches[i]} />
+          <ResultsList key={`search-${i}`} results={pastResult} searchType={pastSearchTypes[i - 1]} search={pastSearches[i - 1]} />
         ))}
         {results && <ResultsList results={results} searchType={searchType} search={search} />}
       </div>
